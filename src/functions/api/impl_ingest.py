@@ -48,7 +48,7 @@ def presign(sub: str, body: dict, repo, settings: Settings, **kw) -> dict:
                 "candidateId": duplicate["candidateId"],
                 "filename": duplicate.get("filename", filename),
                 "status": duplicate.get("status", "READY"),
-                "message": f"Duplicate detected — this resume was already uploaded.",
+                "message": "Duplicate detected — this resume was already uploaded.",
             }
 
     folder = "resumes" if kind == "resume" else "jobs"

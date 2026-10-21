@@ -134,7 +134,7 @@ def _judge_criteria(settings: object, jd: JobRequirements, weights: dict,
               for i, c in enumerate(redacted_chunks.split("\n---\n"))]
 
     criteria_out, evidence_all = [], []
-    # 
+    #
     # One batched call per candidate (NFR-03): all rubric criteria are judged in a
     # single generation instead of one call per criterion. With N concurrent Map
     # lanes (concurrency 5) and 6 rubric criteria each, per-criterion calls burst

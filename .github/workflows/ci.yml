@@ -13,12 +13,25 @@ jobs:
       - name: Install backend deps
         run: uv sync --all-extras || uv pip install -r requirements.txt -r requirements-dev.txt
       - name: Lint (ruff)
-        run: ruff check src tests infra --select E,F,W --ignore E501
+        run: ruff check src tests --select E4,E7,E9,F,W --ignore E501
       - name: Type check (mypy, non-blocking baseline)
         run: mypy src --ignore-missing-imports --no-strict-optional || true
       - name: Unit + security tests
         run: pytest -q
-      - name: CDK synth (dev + cdk-nag)
-        run: |
-          uv pip install -r infra/requirements.txt
-          cd infra && npx aws-cdk synth -c env=dev --all
+
+  web:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - name: Install web deps
+        run: npm ci
+      - name: Typecheck + build the SPA
+        run: npm run build

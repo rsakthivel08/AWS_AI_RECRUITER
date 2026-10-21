@@ -196,9 +196,6 @@ class SearchFilters(BaseModel):
     keywords: list[str] = []
 
 
-from pydantic import BaseModel, Field, model_validator
-
-
 class Citation(BaseModel):
     quote: str = ""
     chunkIndex: int = Field(-1, ge=-1)
