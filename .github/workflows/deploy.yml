@@ -23,22 +23,31 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Check OIDC deployment is configured
-        if: ${{ vars.AWS_DEPLOY_ROLE_ARN == '' }}
         run: |
-          echo "### dev-deploy not configured — skipped, not failed" >> "$GITHUB_STEP_SUMMARY"
-          echo "Add the \`AWS_DEPLOY_ROLE_ARN\` variable to this repo to enable OIDC deploys." >> "$GITHUB_STEP_SUMMARY"
-          echo "See infra/app.py + docs/RUNBOOK.md for the trust policy." >> "$GITHUB_STEP_SUMMARY"
-          exit 0
+          if [ -z "$AWS_DEPLOY_ROLE_ARN" ]; then
+            echo "### dev-deploy not configured — skipped, not failed" >> "$GITHUB_STEP_SUMMARY"
+            echo "Add the \`AWS_DEPLOY_ROLE_ARN\` repository variable to enable OIDC deploys (see docs/RUNBOOK.md)." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+        env:
+          AWS_DEPLOY_ROLE_ARN: ${{ vars.AWS_DEPLOY_ROLE_ARN }}
+      - name: Deploy (only if role configured)
+        if: ${{ vars.AWS_DEPLOY_ROLE_ARN != '' }}
+        run: echo "deploying"
       - uses: astral-sh/setup-uv@v5
+        if: ${{ vars.AWS_DEPLOY_ROLE_ARN != '' }}
       - uses: aws-actions/configure-aws-credentials@v4
+        if: ${{ vars.AWS_DEPLOY_ROLE_ARN != '' }}
         with:
           role-to-assume: ${{ vars.AWS_DEPLOY_ROLE_ARN }}
           aws-region: ap-south-1
       - name: CDK deploy dev
+        if: ${{ vars.AWS_DEPLOY_ROLE_ARN != '' }}
         run: |
           uv pip install -r infra/requirements.txt
           cd infra && npx aws-cdk deploy -c env=dev --all --require-approval never
       - name: Integration smoke test (dev)
+        if: ${{ vars.AWS_DEPLOY_ROLE_ARN != '' }}
         run: python scripts/smoke_test.py --api-url ${{ vars.DEV_API_URL }} || echo "fill DEV_API_URL"
 
   prod-deploy:
@@ -52,11 +61,14 @@ jobs:
           echo "### prod-deploy not configured — skipped, not failed" >> "$GITHUB_STEP_SUMMARY"
           exit 0
       - uses: astral-sh/setup-uv@v5
+        if: ${{ vars.AWS_DEPLOY_ROLE_ARN != '' }}
       - uses: aws-actions/configure-aws-credentials@v4
+        if: ${{ vars.AWS_DEPLOY_ROLE_ARN != '' }}
         with:
           role-to-assume: ${{ vars.AWS_DEPLOY_ROLE_ARN }}
           aws-region: ap-south-1
       - name: CDK deploy prod
+        if: ${{ vars.AWS_DEPLOY_ROLE_ARN != '' }}
         run: |
           uv pip install -r infra/requirements.txt
           cd infra && npx aws-cdk deploy -c env=prod --all
