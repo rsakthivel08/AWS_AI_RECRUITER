@@ -49,3 +49,6 @@ web/dist
 .DS_Store
 Thumbs.db
 lambda_api_patch.zip
+out.json
+presign.json
+*.b64
