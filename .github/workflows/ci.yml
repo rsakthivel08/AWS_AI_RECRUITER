@@ -10,8 +10,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v5
+      - name: Create venv
+        run: uv venv .venv --python 3.12
       - name: Install backend deps
-        run: uv pip install --system -r requirements-dev.txt -r infra/requirements.txt ruff mypy
+        run: |
+          VIRTUAL_ENV=.venv uv pip install -r requirements-dev.txt -r infra/requirements.txt ruff mypy
+          echo "$PWD/.venv/bin" >> "$GITHUB_PATH"
       - name: Lint (ruff)
         run: ruff check src tests --select E4,E7,E9,F,W --ignore E501
       - name: Type check (mypy, non-blocking baseline)
