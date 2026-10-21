@@ -1,0 +1,7 @@
+{
+  "type": "object",
+  "properties": {
+    "rationale": {"type": "string"}
+  },
+  "required": ["rationale"]
+}

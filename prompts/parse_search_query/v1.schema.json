@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "semanticQuery": {"type": ["string", "null"]},
+    "skills": {"type": "array", "items": {"type": "string"}},
+    "minYears": {"type": ["number", "null"]},
+    "seniority": {"type": ["string", "null"]},
+    "domain": {"type": ["string", "null"]},
+    "keywords": {"type": "array", "items": {"type": "string"}}
+  },
+  "required": ["skills", "keywords"]
+}

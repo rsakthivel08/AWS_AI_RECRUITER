@@ -1,0 +1,20 @@
+{
+  "rawPath": "/candidates/c_187a1e2e4125",
+  "requestContext": {
+    "http": {
+      "method": "GET",
+      "path": "/candidates/c_187a1e2e4125"
+    },
+    "authorizer": {
+      "jwt": {
+        "claims": {
+          "sub": "1143dd8a-c041-70b6-dad1-d03abc481b27"
+        }
+      }
+    }
+  },
+  "pathParameters": {
+    "candidateId": "c_187a1e2e4125"
+  },
+  "queryStringParameters": {}
+}

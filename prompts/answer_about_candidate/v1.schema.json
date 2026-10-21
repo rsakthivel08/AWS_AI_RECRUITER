@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "answer": {"type": "string"},
+    "citations": {"type": "array", "items": {"type": "object", "properties": {
+      "quote": {"type": "string"},
+      "chunkIndex": {"type": "integer", "minimum": -1}
+    }, "required": ["quote"]}},
+    "missingInfo": {"type": "boolean"}
+  },
+  "required": ["answer", "citations", "missingInfo"]
+}

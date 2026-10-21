@@ -1,0 +1,130 @@
+[
+  {
+    "role": "Backend Developer",
+    "description": "Design and build server-side applications and APIs. Work with databases, authentication, and business logic. Common stack: Python or Java, Django/Flask/FastAPI or Spring Boot, PostgreSQL/MySQL, REST APIs, Docker."
+  },
+  {
+    "role": "Frontend Developer",
+    "description": "Build user interfaces and client-side applications. Work with React, Angular, or Vue, HTML, CSS, TypeScript, and responsive design. Focus on UX and browser performance."
+  },
+  {
+    "role": "Full Stack Developer",
+    "description": "Build both client and server sides of web applications. Comfortable with a frontend framework, a backend framework, and a database, deploying end-to-end features."
+  },
+  {
+    "role": "Software Engineer",
+    "description": "Design, develop, test, and maintain software applications and systems. Work with programming languages such as Java, Python, C++, or JavaScript, software architecture, databases, APIs, testing, version control, and development methodologies."
+  },
+  {
+    "role": "Machine Learning Engineer",
+    "description": "Build and deploy machine learning models. Work with Python, TensorFlow or PyTorch, scikit-learn, data pipelines, model evaluation, and production ML serving with ONNX or similar."
+  },
+  {
+    "role": "Data Scientist",
+    "description": "Analyze data to extract insights and build predictive models. Work with Python or R, pandas, statistical analysis, data visualization, and machine learning."
+  },
+  {
+    "role": "AI Engineer",
+    "description": "Design and develop artificial intelligence solutions for real-world applications. Work with machine learning, deep learning, computer vision, NLP, generative AI, model APIs, Python, TensorFlow or PyTorch, and AI application frameworks."
+  },
+  {
+    "role": "AI/NLP Engineer",
+    "description": "Build natural language processing and conversational AI systems. Work with spaCy, Hugging Face transformers, LangChain, vector databases, and LLM-based applications."
+  },
+  {
+    "role": "Computer Vision Engineer",
+    "description": "Develop systems that analyze and interpret images and video. Work with OpenCV, PyTorch or TensorFlow, CNNs, object detection, image classification, segmentation, OCR, and computer vision pipelines."
+  },
+  {
+    "role": "MLOps Engineer",
+    "description": "Build and maintain infrastructure for deploying and managing machine learning systems. Work with ML pipelines, Docker, Kubernetes, cloud platforms, model versioning, experiment tracking, CI/CD, monitoring, and automated model deployment."
+  },
+  {
+    "role": "Data Engineer",
+    "description": "Build data pipelines and infrastructure for large-scale data processing. Work with Spark, Airflow, SQL, data warehousing, and ETL systems."
+  },
+  {
+    "role": "Data Analyst",
+    "description": "Analyze datasets to identify trends, patterns, and actionable insights. Work with SQL, Python, Excel, Power BI or Tableau, statistical analysis, data visualization, and reporting."
+  },
+  {
+    "role": "DevOps Engineer",
+    "description": "Automate infrastructure and deployment pipelines. Work with Docker, Kubernetes, CI/CD, Terraform, AWS/Azure/GCP, monitoring and reliability."
+  },
+  {
+    "role": "Cloud Engineer",
+    "description": "Design, deploy, and maintain cloud-based infrastructure and applications. Work with AWS, Azure, or GCP, networking, virtual machines, containers, storage, databases, security, automation, and infrastructure as code."
+  },
+  {
+    "role": "Site Reliability Engineer",
+    "description": "Improve the reliability, availability, and performance of software systems. Work with cloud infrastructure, monitoring, observability, automation, incident management, Kubernetes, CI/CD, and system scalability."
+  },
+  {
+    "role": "Cybersecurity Engineer",
+    "description": "Design and implement security solutions to protect applications, networks, and systems. Work with network security, vulnerability assessment, encryption, authentication, firewalls, security monitoring, penetration testing, and incident response."
+  },
+  {
+    "role": "Network Engineer",
+    "description": "Design, configure, and maintain computer networks and communication infrastructure. Work with TCP/IP, routing, switching, DNS, VPNs, firewalls, network monitoring, and technologies from vendors such as Cisco and Juniper."
+  },
+  {
+    "role": "Database Engineer",
+    "description": "Design, develop, optimize, and maintain database systems. Work with SQL, PostgreSQL, MySQL, Oracle, database architecture, indexing, query optimization, transactions, replication, backups, and database security."
+  },
+  {
+    "role": "Mobile Developer",
+    "description": "Build native or cross-platform mobile applications. Work with Swift, Kotlin, React Native, or Flutter, and mobile UI/UX patterns."
+  },
+  {
+    "role": "Embedded Systems Engineer",
+    "description": "Design and develop software for embedded devices and microcontrollers. Work with C or C++, microcontrollers, sensors, communication protocols, RTOS, hardware interfaces, debugging, and real-time systems."
+  },
+  {
+    "role": "Firmware Engineer",
+    "description": "Develop low-level software that controls electronic hardware and embedded devices. Work with C or C++, microcontrollers, device drivers, memory management, communication protocols, hardware debugging, and real-time operating systems."
+  },
+  {
+    "role": "Robotics Engineer",
+    "description": "Design and develop robotic systems that interact with physical environments. Work with robotics software, sensors, actuators, computer vision, control systems, ROS, Python, C++, and autonomous navigation."
+  },
+  {
+    "role": "Systems Engineer",
+    "description": "Design and integrate complex software, hardware, and infrastructure systems. Work with system architecture, requirements analysis, networking, operating systems, performance optimization, reliability, and system integration."
+  },
+  {
+    "role": "Cloud Security Engineer",
+    "description": "Protect cloud infrastructure, applications, and data from security threats. Work with AWS, Azure, or GCP security services, IAM, encryption, network security, vulnerability management, compliance, and security monitoring."
+  },
+  {
+    "role": "Blockchain Developer",
+    "description": "Develop decentralized applications and blockchain-based systems. Work with blockchain platforms, smart contracts, Solidity, Web3 technologies, cryptography, wallets, decentralized storage, and blockchain APIs."
+  },
+  {
+    "role": "Game Developer",
+    "description": "Design and develop interactive games for desktop, mobile, or console platforms. Work with Unity or Unreal Engine, C# or C++, game physics, graphics, gameplay systems, animation, and performance optimization."
+  },
+  {
+    "role": "QA / Test Engineer",
+    "description": "Design and execute test plans, build automated test suites, and ensure software quality. Work with Selenium, Postman, CI pipelines, and bug tracking."
+  },
+  {
+    "role": "Automation Engineer",
+    "description": "Develop automated solutions for software testing, infrastructure, and business processes. Work with Python, Java, Selenium, APIs, scripting, CI/CD pipelines, workflow automation, and monitoring systems."
+  },
+  {
+    "role": "Platform Engineer",
+    "description": "Build internal platforms and infrastructure that enable development teams to deploy and operate applications efficiently. Work with Kubernetes, Docker, cloud platforms, CI/CD, infrastructure as code, automation, and developer tooling."
+  },
+  {
+    "role": "Solutions Architect",
+    "description": "Design scalable technical solutions that meet business and application requirements. Work with cloud architecture, distributed systems, databases, APIs, security, networking, system integration, and technologies across AWS, Azure, or GCP."
+  },
+  {
+    "role": "Performance Engineer",
+    "description": "Analyze and optimize the performance, scalability, and resource efficiency of software systems. Work with profiling tools, benchmarking, load testing, system optimization, databases, distributed systems, and performance monitoring."
+  },
+  {
+    "role": "Research Engineer",
+    "description": "Develop and implement experimental algorithms and technologies to solve complex engineering problems. Work with research methodologies, prototyping, machine learning, algorithms, data analysis, scientific computing, and emerging technologies."
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "app": "cmd /c \"set PYTHONPATH=. && ..\\.venv\\Scripts\\python.exe app.py\"",
+  "context": {
+    "env": "dev",
+    "@aws-cdk/aws-apigatewayv2:defaultStageThrottling": true
+  },
+  "watch": {
+    "include": ["**"],
+    "exclude": ["README.md", "cdk.out", "node_modules"]
+  }
+}

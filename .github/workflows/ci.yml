@@ -1,0 +1,24 @@
+name: ci
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - name: Install backend deps
+        run: uv sync --all-extras || uv pip install -r requirements.txt -r requirements-dev.txt
+      - name: Lint (ruff)
+        run: ruff check src tests infra --select E,F,W --ignore E501
+      - name: Type check (mypy, non-blocking baseline)
+        run: mypy src --ignore-missing-imports --no-strict-optional || true
+      - name: Unit + security tests
+        run: pytest -q
+      - name: CDK synth (dev + cdk-nag)
+        run: |
+          uv pip install -r infra/requirements.txt
+          cd infra && npx aws-cdk synth -c env=dev --all

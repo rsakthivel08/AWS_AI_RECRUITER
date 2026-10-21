@@ -1,0 +1,8 @@
+pytest>=8
+pytest-mock>=3
+moto>=5.1
+ruff>=0.8
+mypy>=1.13
+boto3>=1.35
+boto3-stubs[dynamodb,s3,stepfunctions,bedrock]>=1.35
+pydantic>=2.9

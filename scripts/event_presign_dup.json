@@ -1,0 +1,21 @@
+{
+  "rawPath": "/uploads/presign",
+  "requestContext": {
+    "http": {
+      "method": "POST",
+      "path": "/uploads/presign"
+    },
+    "authorizer": {
+      "jwt": {
+        "claims": {
+          "sub": "1143dd8a-c041-70b6-dad1-d03abc481b27"
+        }
+      }
+    }
+  },
+  "queryStringParameters": {},
+  "headers": {
+    "content-type": "application/json"
+  },
+  "body": "{\"kind\": \"resume\", \"filename\": \"Sakthivel_Rajendran_Resume.docx\", \"sizeBytes\": 18197, \"sha256\": \"a01a6d0ab884066af173abffd62f70f87b374711a8e56ffc30b45768619a8b45\"}"
+}

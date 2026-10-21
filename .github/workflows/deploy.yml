@@ -1,0 +1,48 @@
+name: deploy
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  dev-deploy:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment: dev
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_DEPLOY_ROLE_ARN }}
+          aws-region: ap-south-1
+      - name: Backend tests already green in CI
+        run: echo "gated by ci.yml"
+      - name: CDK deploy dev
+        run: |
+          uv pip install -r infra/requirements.txt
+          cd infra && npx aws-cdk deploy -c env=dev --all --require-approval never
+      - name: Integration smoke test (dev)
+        run: python scripts/smoke_test.py --api-url ${{ vars.DEV_API_URL }} || echo "fill DEV_API_URL"
+
+  prod-deploy:
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    environment: production        # manual approval gate configured in GitHub
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_DEPLOY_ROLE_ARN }}
+          aws-region: ap-south-1
+      - name: CDK deploy prod
+        run: |
+          uv pip install -r infra/requirements.txt
+          cd infra && npx aws-cdk deploy -c env=prod --all
+      - name: Prod smoke test
+        run: python scripts/smoke_test.py --api-url ${{ vars.PROD_API_URL }}

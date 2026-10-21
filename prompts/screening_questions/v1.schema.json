@@ -1,0 +1,16 @@
+{
+  "type": "object",
+  "properties": {
+    "questions": {"type": "array", "minItems": 3, "maxItems": 12, "items": {
+      "type": "object",
+      "properties": {
+        "category": {"type": "string", "enum": ["gap", "weakClaim", "inconsistency", "general"]},
+        "question": {"type": "string"},
+        "why": {"type": "string"},
+        "goodAnswer": {"type": "string"}
+      },
+      "required": ["category", "question", "why", "goodAnswer"]
+    }}
+  },
+  "required": ["questions"]
+}

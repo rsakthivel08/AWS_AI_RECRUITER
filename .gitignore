@@ -1,0 +1,51 @@
+# --- secrets / credentials (NEVER commit) ---
+.gemini-key.local
+web/.env.local
+web/.env*.local
+*.pem
+*.key
+scripts/env_*.json
+ev.json
+ev2.json
+
+# --- privacy: sample resumes / candidate data ---
+cand.txt
+data/resumes/
+*.pdf
+!web/public/sample-resume.pdf
+
+# --- python dev environment / caches ---
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# --- node ---
+node_modules/
+web/node_modules/
+web/tsconfig.tsbuildinfo
+
+# --- cdk build output (regenerated with `cdk synth`) ---
+infra/cdk.out/
+infra/cdk.out
+*.zip
+
+# --- build outputs (regenerated with `npm run build` in web/) ---
+web/dist/
+web/dist
+
+# --- scratch/debug scripts and notes ---
+.tmp_*
+*.log
+
+# --- stray binaries/artifacts, personal workspace files ---
+*.mp4
+*.docx
+.vscode/
+.freebuff/
+.DS_Store
+Thumbs.db
+lambda_api_patch.zip

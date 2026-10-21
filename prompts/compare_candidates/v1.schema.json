@@ -1,0 +1,9 @@
+{
+  "type": "object",
+  "properties": {
+    "summary": {"type": "string"},
+    "strengths": {"type": "object", "additionalProperties": {
+      "type": "array", "items": {"type": "string"}}}
+  },
+  "required": ["summary", "strengths"]
+}

@@ -1,0 +1,10 @@
+{
+  "type": "object",
+  "properties": {
+    "flags": {"type": "array", "items": {"type": "object", "properties": {
+      "type": {"type": "string", "enum": ["gap", "overlap", "implausible", "seniority"]},
+      "detail": {"type": "string"}
+    }, "required": ["type", "detail"]}}
+  },
+  "required": ["flags"]
+}

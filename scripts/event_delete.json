@@ -1,0 +1,20 @@
+{
+  "rawPath": "/candidates/c_00713112451b",
+  "requestContext": {
+    "http": {
+      "method": "DELETE",
+      "path": "/candidates/c_00713112451b"
+    },
+    "authorizer": {
+      "jwt": {
+        "claims": {
+          "sub": "1143dd8a-c041-70b6-dad1-d03abc481b27"
+        }
+      }
+    }
+  },
+  "pathParameters": {
+    "candidateId": "c_00713112451b"
+  },
+  "queryStringParameters": {}
+}

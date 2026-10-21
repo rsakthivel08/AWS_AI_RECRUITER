@@ -1,0 +1,24 @@
+{
+  "rawPath": "/candidates/c_187a1e2e4125/ask",
+  "requestContext": {
+    "http": {
+      "method": "POST",
+      "path": "/candidates/c_187a1e2e4125/ask"
+    },
+    "authorizer": {
+      "jwt": {
+        "claims": {
+          "sub": "1143dd8a-c041-70b6-dad1-d03abc481b27"
+        }
+      }
+    }
+  },
+  "pathParameters": {
+    "candidateId": "c_187a1e2e4125"
+  },
+  "queryStringParameters": {},
+  "headers": {
+    "content-type": "application/json"
+  },
+  "body": "{\"question\": \"What skills does this candidate have?\"}"
+}

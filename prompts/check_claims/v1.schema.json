@@ -1,0 +1,11 @@
+{
+  "type": "object",
+  "properties": {
+    "claimChecks": {"type": "array", "items": {"type": "object", "properties": {
+      "claim": {"type": "string"},
+      "verdict": {"type": "string", "enum": ["Supported", "Weak", "Unsupported"]},
+      "support": {"type": ["string", "null"]}
+    }, "required": ["claim", "verdict"]}}
+  },
+  "required": ["claimChecks"]
+}

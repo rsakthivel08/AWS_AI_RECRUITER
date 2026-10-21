@@ -1,0 +1,17 @@
+{
+  "rawPath": "/candidates",
+  "requestContext": {
+    "http": {
+      "method": "GET",
+      "path": "/candidates"
+    },
+    "authorizer": {
+      "jwt": {
+        "claims": {
+          "sub": "1143dd8a-c041-70b6-dad1-d03abc481b27"
+        }
+      }
+    }
+  },
+  "queryStringParameters": {}
+}

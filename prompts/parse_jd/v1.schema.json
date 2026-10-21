@@ -1,0 +1,16 @@
+{
+  "type": "object",
+  "properties": {
+    "title": {"type": ["string", "null"]},
+    "requiredSkills": {"type": "array", "items": {"type": "string"}},
+    "preferredSkills": {"type": "array", "items": {"type": "string"}},
+    "minYears": {"type": ["number", "null"]},
+    "seniority": {"type": ["string", "null"], "enum": ["Intern", "Junior", "Mid", "Senior", "Lead/Principal", null]},
+    "education": {"type": ["string", "null"]},
+    "domain": {"type": ["string", "null"]},
+    "responsibilities": {"type": "array", "items": {"type": "string"}, "maxItems": 10},
+    "certificationsRequired": {"type": "array", "items": {"type": "string"}},
+    "mustHaves": {"type": "array", "items": {"type": "string"}}
+  },
+  "required": ["requiredSkills", "preferredSkills", "responsibilities", "mustHaves"]
+}
